@@ -1,9 +1,9 @@
 import socket
 
-s = socket.socket()
+sock = socket.socket()
 host = socket.gethostname()
 port = 1337
 
-s.connect((host, port))
-print s.recv(1024)
-s.close
+sock.connect((host, port))
+print sock.recv(1024)
+sock.close

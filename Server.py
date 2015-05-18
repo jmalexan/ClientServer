@@ -1,13 +1,13 @@
 import socket
 
-s = socket.socket()
+sock = socket.socket()
 host = socket.gethostname()
 port = 1337
-s.bind((host, port))
+sock.bind((host, port))
 
-s.listen(5)
+sock.listen(5)
 while True:
-    c, addr = s.accept()
+    c, addr = sock.accept()
     print 'got connection from', addr
     c.send('Thank you for connecting')
     c.close()
