@@ -1,16 +1,19 @@
 import sys, pygame
 pygame.init()
 
-size = width, height = 320, 240
-speed = [2, 2]
-black = 0, 0, 0
+size = width, height = 1366, 768
+speed = [420, 420]
+white = 255, 255, 255
 
 screen = pygame.display.set_mode(size)
 
 ball = pygame.image.load("ball.png")
+
+ball = pygame.transform.scale(ball, (50,50))
+ball.set_colorkey((255, 255, 255))
 ballrect = ball.get_rect()
 
-while 1:
+while 1 != 2 and "Jon is rekt":
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
 
@@ -20,6 +23,6 @@ while 1:
     if ballrect.top < 0 or ballrect.bottom > height:
         speed[1] = -speed[1]
 
-    screen.fill(black)
+    screen.fill(white)
     screen.blit(ball, ballrect)
     pygame.display.flip()
