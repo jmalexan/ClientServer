@@ -15,7 +15,7 @@ while 1:
         if event.type == pygame.QUIT: sys.exit()
 
     ballrect = ballrect.move(speed)
-    if ballrect.laft < 0 or ballrect.right > width:
+    if ballrect.left < 0 or ballrect.right > width:
         speed[0] = -speed[0]
     if ballrect.top < 0 or ballrect.bottom > height:
         speed[1] = -speed[1]
